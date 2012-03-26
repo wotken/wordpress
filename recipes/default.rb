@@ -41,7 +41,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/wordpress-#{node['wordpress']['ve
   mode "0644"
 end
 
-directory "#{node['wordpress']['dir']}" do
+directory node['wordpress']['dir'] do
   owner "root"
   group "root"
   mode "0755"
@@ -120,7 +120,7 @@ end
 
 web_app "wordpress" do
   template "wordpress.conf.erb"
-  docroot "#{node['wordpress']['dir']}"
+  docroot node['wordpress']['dir']
   server_name server_fqdn
   server_aliases node['wordpress']['server_aliases']
 end
