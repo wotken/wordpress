@@ -1,0 +1,5 @@
+rvm:
+  - 1.8.7
+  - 1.9.3
+bundler_args: --without integration
+script: bundle exec strainer test --without kitchen
