@@ -57,8 +57,8 @@ else
 end
 
 directory node['wordpress']['dir'] do
-  owner "root"
-  group "root"
+  owner "www-data"
+  group "www-data"
   mode "0755"
   action :create
   recursive true
